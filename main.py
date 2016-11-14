@@ -4,7 +4,7 @@ import math
 from collections import Counter
 
 book1 = open_workbook("Train.xls")
-book2 = open_workbook("Test2.xls")
+book2 = open_workbook("Test.xls")
 
 bookwr = copy(book2)
 
@@ -41,6 +41,7 @@ for i in range(1, test.nrows):
         item.append(test.cell(i, j).value)
     temp = (classification(item))
     print(temp)
+    wr.write(0,11,'Y')
     wr.write(i,11,temp)
 
 bookwr.save('Classified.xls')
