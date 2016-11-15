@@ -34,12 +34,29 @@ def euclidean_distance(x1, x2):
         x = x + math.pow((x2[i] - x1[i]), 2)
     return math.sqrt(x)
 
+wr.write(0,12,'T')
+wr.write(0,13,'A')
+
+cont = []
 for i in range(1, test.nrows):
     item = []
     for j in range(1, test.ncols):
         item.append(test.cell(i, j).value)
     temp = (classification(item))
-    wr.write(i, 11, temp)
-wr.write(0,11,'Y')
+    temp2 = int(train.cell(i, 11).value)
+    print(temp,'-',temp2)
+    wr.write(i, 12, temp)
+    if(temp == temp2):
+        wr.write(i, 13, 1)
+        cont.append(1)
+    else:
+        wr.write(i, 13, 0)
+        cont.append(0)
 
-bookwr.save('Classified.xls')
+temp3 = Counter(cont)
+
+acc = (100 / test.nrows) * temp3[1]
+wr.write(0, 14, 'accuracy')
+wr.write(1, 14, acc)
+
+bookwr.save('Accuracy.xls')
