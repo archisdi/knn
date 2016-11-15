@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c2830eb-7357-48aa-be40-48208d807762" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Test.xls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Test2.xls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/accuracy.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Test3.xls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <ignored path="KNN.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -437,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479151213835</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="accuracy test addes">
+      <created>1479186890016</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1479186890016</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -477,7 +481,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="done" />
-    <option name="LAST_COMMIT_MESSAGE" value="done" />
+    <MESSAGE value="accuracy test addes" />
+    <option name="LAST_COMMIT_MESSAGE" value="accuracy test addes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
