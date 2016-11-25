@@ -1,45 +1,28 @@
+#Library untuk membaca file excel
 from xlrd import open_workbook
+
+#Library untuk menduplikat file excel
 from xlutils.copy import copy
-import math
-from collections import Counter
+
+#Package buat sendiri
+from classification import knn as kn
 
 book1 = open_workbook("Train.xls")
-book2 = open_workbook("Test3.xls")
+book2 = open_workbook("Test2.xls")
 
 bookwr = copy(book2)
 
-train = book1.sheet_by_index(0)
-test = book2.sheet_by_index(0)
+datatrain = book1.sheet_by_index(0)
+datatest = book2.sheet_by_index(0)
 wr = bookwr.get_sheet(0)
 
-def classification(item):
-    trainres = []
-    for i in range(1, train.nrows):
-        item2 = []
-        for j in range(1, train.ncols):
-            item2.append(train.cell(i, j).value)
-        trainres.append((euclidean_distance(item, item2), train.cell(i, 11).value))
-    trainres = sorted(trainres)
-    # return trainres
-    trainres = Counter(elem[1] for elem in trainres[0:501])
-    # print(trainres)
-    if (trainres[0] > trainres[1]):
-        return 0
-    else:
-        return 1
-
-def euclidean_distance(x1, x2):
-    x = 0
-    for i in range(10):
-        x = x + math.pow((x2[i] - x1[i]), 2)
-    return math.sqrt(x)
-
-for i in range(1, test.nrows):
+#Main Program
+for i in range(1, datatest.nrows):
     item = []
-    for j in range(1, test.ncols):
-        item.append(test.cell(i, j).value)
-    temp = (classification(item))
-    wr.write(i, 11, temp)
-wr.write(0,11,'Y')
-
+    for j in range(1, datatest.ncols):
+        item.append(datatest.cell(i, j).value)
+    result = (kn.determine(kn, item, datatrain))
+    print(i,' = ', result)
+    wr.write(i, 11, result)
+wr.write(0,11,'y')
 bookwr.save('Classified.xls')
