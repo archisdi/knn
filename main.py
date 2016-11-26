@@ -7,9 +7,9 @@ from xlutils.copy import copy
 #Package buat sendiri
 from classification import knn as kn
 
+#buka file training dan testing
 book1 = open_workbook("Train.xls")
 book2 = open_workbook("Test2.xls")
-
 bookwr = copy(book2)
 
 datatrain = book1.sheet_by_index(0)

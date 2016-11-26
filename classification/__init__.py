@@ -5,7 +5,7 @@ class knn:
     def determine(self, item, train):
         trainres = []
         rows = train.nrows
-        k = int((rows/180)+1)
+        k = 1001
         for i in range(1, rows):
             item2 = []
             for j in range(1, train.ncols):
